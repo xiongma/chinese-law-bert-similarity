@@ -1,6 +1,6 @@
 # How to use
 * this project just support every sentence with 45 char length
-* [download](https://pan.baidu.com/s/1B3x5BN5Nm1Um6yq1eJU6qA) model file, pwd: 747l
+* [download](链接：https://pan.baidu.com/s/1CbKiY8GBGaF2dnMioLDU5Q) model file, pwd: vv1k
 * just use like this 
     * first
         ````python
