@@ -41,8 +41,8 @@ class BertSim(object):
                                             use_one_hot_embeddings=False)
 
             # get output weights and output bias
-            ckpt_file = os.path.join(self.bert_sim_dir, 'model.ckpt-6123')
-            reader = self.tf.train.NewCheckpointReader(ckpt_file)
+            ckpt = self.tf.train.get_checkpoint_state(self.bert_sim_dir).all_model_checkpoint_paths[-1]
+            reader = self.tf.train.NewCheckpointReader(ckpt)
             output_weights = reader.get_tensor('output_weights')
             output_bias = reader.get_tensor('output_bias')
 
@@ -60,7 +60,7 @@ class BertSim(object):
             self.sess = self.tf.Session(config=sess_config, graph=graph)
             self.sess.run(self.tf.global_variables_initializer())
             self.tf.reset_default_graph()
-            saver.restore(self.sess, ckpt_file)
+            saver.restore(self.sess, ckpt)
 
         except Exception as e:
             self.logger.error(e)
