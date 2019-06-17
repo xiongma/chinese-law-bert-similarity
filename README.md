@@ -53,5 +53,5 @@ output_layer = model.get_pooled_output()
 
 * Use the following code, it can **increase the accuracy 1%**.
 ````python
-output_layer = [tf.squeeze(model.all_encoder_layers[i][:, 0:1, :], axis=1) for i in range(-4, 0, 1)]
+output_layer = tf.concat([tf.squeeze(model.all_encoder_layers[i][:, 0:1, :], axis=1) for i in range(-4, 0, 1)], axis=-1)
 ````
