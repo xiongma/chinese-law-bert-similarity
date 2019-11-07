@@ -40,8 +40,7 @@ In this project, I just use bert pre model to fine tuning, so I just use their o
 the new one just same as the original code, so I given up.
 ### Dataset
 Because of my domain work, my work is based on judicial examination education, so I didn't use common dataset, my dataset were 
-labeled by manual work, it include 80000+, 50000+ are similar, 30000+ are dissimilar, this is my dataset [link](https://pan.baidu.com/s/11qaoz6Lgd8oxkESLpKdk-A)
-pwd ptje
+labeled by manual work, it include 80000+, 50000+ are similar, 30000+ are dissimilar, because of the privacy, I can't open source of this dataset
 ### Suggest:
 In original code, they just got the model pool output, I think there may be other ways to increase the accuracy, I tried some ways to increase the accuracy, but I found one,
 just concat the [CLS] embedding of the fourth from bottom to tailender in encoder output list, if you want to use my way, just do like this。
